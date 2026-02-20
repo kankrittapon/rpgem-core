@@ -8,7 +8,14 @@ public class ModMessages {
     public static void register(final RegisterPayloadHandlersEvent event) {
         final PayloadRegistrar registrar = event.registrar(RPGEMCore.MODID);
 
-        // Core packets go here (e.g. Syncing some global state)
-        // registrar.playToClient(...)
+        registrar.playToClient(
+                PacketSyncFailStack.TYPE,
+                PacketSyncFailStack.STREAM_CODEC,
+                PacketSyncFailStack::handle);
+
+        registrar.playToClient(
+                PacketSyncWeight.TYPE,
+                PacketSyncWeight.STREAM_CODEC,
+                PacketSyncWeight::handle);
     }
 }

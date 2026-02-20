@@ -16,8 +16,13 @@ public class RPGEMCore {
 
         // Registries
         net.kankrittapon.rpgem.core.init.ModAttributes.register(modEventBus);
+        net.kankrittapon.rpgem.core.init.ModItems.register(modEventBus);
+        net.kankrittapon.rpgem.core.init.ModEntities.register(modEventBus);
         net.kankrittapon.rpgem.core.init.ModMobEffects.register(modEventBus);
+        net.kankrittapon.rpgem.core.init.ModDataComponents.register(modEventBus);
+        net.kankrittapon.rpgem.core.init.ModAttachments.register(modEventBus);
         net.kankrittapon.rpgem.core.init.ModCreativeModeTabs.register(modEventBus);
+        net.kankrittapon.rpgem.core.loot.ModLootModifiers.register(modEventBus);
 
         // Networking
         modEventBus.addListener(net.kankrittapon.rpgem.core.network.ModMessages::register);
@@ -27,6 +32,11 @@ public class RPGEMCore {
                 net.kankrittapon.rpgem.core.config.Config.SPEC);
         modContainer.registerConfig(net.neoforged.fml.config.ModConfig.Type.CLIENT,
                 net.kankrittapon.rpgem.core.config.ClientConfig.SPEC);
+
+        // Client Setup
+        if (net.neoforged.fml.loading.FMLEnvironment.dist.isClient()) {
+            modEventBus.register(net.kankrittapon.rpgem.core.client.RPGEMCoreClient.class);
+        }
 
         LOGGER.info("RPGEM Core Initialized");
     }

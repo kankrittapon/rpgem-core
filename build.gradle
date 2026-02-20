@@ -4,14 +4,7 @@ plugins {
     id 'net.neoforged.gradle.userdev' version '7.1.20'
 }
 
-tasks.named('wrapper', Wrapper).configure {
-    // Define wrapper values here so as to not have to always do so when updating gradlew.properties.
-    // Switching this to Wrapper.DistributionType.ALL will download the full gradle sources that comes with
-    // documentation attached on cursor hover of gradle classes and methods. However, this comes with increased
-    // file size for Gradle. If you do switch this to ALL, run the Gradle wrapper task twice afterwards.
-    // (Verify by checking gradle/wrapper/gradle-wrapper.properties to see if distributionUrl now points to `-all`)
-    distributionType = Wrapper.DistributionType.BIN
-}
+// Wrapper is handled at root
 
 version = mod_version
 group = mod_group_id
@@ -46,7 +39,9 @@ base {
 }
 
 // Mojang ships Java 21 to end users in 1.21.1, so mods should target Java 21.
-java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(21)
+}
 
 //minecraft.accessTransformers.file rootProject.file('src/main/resources/META-INF/accesstransformer.cfg')
 //minecraft.accessTransformers.entry public net.minecraft.client.Minecraft textureManager # textureManager
@@ -120,16 +115,39 @@ dependencies {
     compileOnly files("libs/Jade-1.21.1-NeoForge-15.10.5.jar")
     localRuntime files("libs/Jade-1.21.1-NeoForge-15.10.5.jar")
 
-    // Example mod dependency using a mod jar from ./libs with a flat dir repository
-    // implementation "blank:coolmod-${mc_version}:${coolmod_version}"
-
     // GeckoLib
     implementation "software.bernie.geckolib:geckolib-neoforge-1.21.1:4.7"
 
     // Curios API
     runtimeOnly "top.theillusivec4.curios:curios-neoforge:9.4.0+1.21.1"
     compileOnly "top.theillusivec4.curios:curios-neoforge:9.4.0+1.21.1:api"
+
+    // ===== Apotheosis Group (5 mods - localRuntime for testing) =====
+    // Placebo (Library - Required by Apotheosis)
+    localRuntime "curse.maven:placebo-283644:6446766"
+    // Apothic Attributes
+    localRuntime "curse.maven:apothic-attributes-898963:7445079"
+    // Apothic Enchanting
+    localRuntime "curse.maven:apothic-enchanting-1063926:7444883"
+    // Apothic Spawners
+    localRuntime "curse.maven:apothic-spawners-986583:7445126"
+    // Apotheosis (main mod)
+    localRuntime "curse.maven:apotheosis-313970:7444906"
+
+    // ===== L2 Series (3 mods - localRuntime for testing) =====
+    // L2 Library (Required)
+    localRuntime "curse.maven:l2library-620203:7584599"
+    // L2 Complements
+    localRuntime "curse.maven:l2complements-758349:7564492"
+    // L2 Hostility (main mod)
+    localRuntime "curse.maven:l2hostility-909207:7550890"
+
+    // Unified Testing: Include other modules at runtime
+    runtimeOnly project(':rpgem-alchemy-plus')
+    runtimeOnly project(':rpgem-forging-plus')
+    runtimeOnly project(':rpgem-fairy-plus')
 }
+
 
 // This block of code expands all declared replace properties in the specified resource targets.
 // A missing property will result in an error. Properties are expanded using ${} Groovy notation.

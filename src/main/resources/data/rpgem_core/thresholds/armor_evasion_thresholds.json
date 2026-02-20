@@ -1,0 +1,66 @@
+[
+  {
+    "minLevel": 1,
+    "maxLevel": 5,
+    "armorDefensePerLevel": 0.5
+  },
+  {
+    "minLevel": 6,
+    "maxLevel": 10,
+    "armorDefensePerLevel": 1.0,
+    "evasion": 0.08
+  },
+  {
+    "minLevel": 11,
+    "maxLevel": 15,
+    "armorDefensePerLevel": 1.5,
+    "evasion": 0.15,
+    "damageReduction": 0.03,
+    "reflectResist": 0.20
+  },
+  {
+    "minLevel": 16,
+    "maxLevel": 20,
+    "armorDefensePerLevel": 2.0,
+    "evasion": 0.25,
+    "damageReduction": 0.05,
+    "sealResist": 0.20,
+    "reflectResist": 0.30
+  },
+  {
+    "minLevel": 21,
+    "maxLevel": 25,
+    "armorDefensePerLevel": 2.5,
+    "evasion": 0.33,
+    "damageReduction": 0.08,
+    "sealResist": 0.35,
+    "reflectResist": 0.30
+  },
+  {
+    "minLevel": 26,
+    "maxLevel": 26,
+    "armorDefensePerLevel": 3.0,
+    "evasion": 0.40,
+    "damageReduction": 0.10,
+    "sealResist": 0.50,
+    "reflectResist": 0.35
+  },
+  {
+    "minLevel": 27,
+    "maxLevel": 27,
+    "armorDefensePerLevel": 3.5,
+    "evasion": 0.45,
+    "damageReduction": 0.12,
+    "sealResist": 0.55,
+    "reflectResist": 0.38
+  },
+  {
+    "minLevel": 28,
+    "maxLevel": -1,
+    "armorDefensePerLevel": 4.0,
+    "evasion": 0.50,
+    "damageReduction": 0.15,
+    "sealResist": 0.60,
+    "reflectResist": 0.40
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "type": "rpgem_core:add_item",
+  "conditions": [
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "type": "minecraft:witch"
+      }
+    }
+  ],
+  "item": "rpgem_core:ethernal_bottle",
+  "chance": 0.0001
+}

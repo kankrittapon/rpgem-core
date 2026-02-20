@@ -1,0 +1,61 @@
+[
+  {
+    "minLevel": 1,
+    "maxLevel": 5,
+    "attackDamagePerLevel": 1.0,
+    "armorDefensePerLevel": 0.0
+  },
+  {
+    "minLevel": 6,
+    "maxLevel": 10,
+    "attackDamagePerLevel": 1.0,
+    "lifeSteal": 0.02
+  },
+  {
+    "minLevel": 11,
+    "maxLevel": 15,
+    "attackDamagePerLevel": 1.5,
+    "lifeSteal": 0.02,
+    "critChance": 0.08
+  },
+  {
+    "minLevel": 16,
+    "maxLevel": 20,
+    "attackDamagePerLevel": 2.0,
+    "lifeSteal": 0.02,
+    "critChance": 0.08,
+    "elementDamage": 0.15
+  },
+  {
+    "minLevel": 21,
+    "maxLevel": 25,
+    "attackDamagePerLevel": 2.5,
+    "lifeSteal": 0.04,
+    "critChance": 0.15,
+    "elementDamage": 0.15
+  },
+  {
+    "minLevel": 26,
+    "maxLevel": 26,
+    "attackDamagePerLevel": 3.0,
+    "lifeSteal": 0.05,
+    "critChance": 0.20,
+    "elementDamage": 0.25
+  },
+  {
+    "minLevel": 27,
+    "maxLevel": 27,
+    "attackDamagePerLevel": 3.5,
+    "lifeSteal": 0.05,
+    "critChance": 0.20,
+    "elementDamage": 0.30
+  },
+  {
+    "minLevel": 28,
+    "maxLevel": -1,
+    "attackDamagePerLevel": 4.0,
+    "lifeSteal": 0.08,
+    "critChance": 0.25,
+    "elementDamage": 0.35
+  }
+]

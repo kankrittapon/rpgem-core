@@ -1,0 +1,15 @@
+{
+  "type": "rpgem_core:add_item",
+  "conditions": [
+    {
+      "condition": "minecraft:damage_source_properties",
+      "predicate": {
+        "source_entity": {
+          "type": "minecraft:player"
+        }
+      }
+    }
+  ],
+  "item": "rpgem_core:upgrade_stone_tier_1",
+  "chance": 0.01
+}
